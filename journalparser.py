@@ -1,4 +1,4 @@
-with open("data/journal.0006.txt", encoding="windows-1252") as f:
+with open("data/journal.0124.txt", encoding="windows-1252") as f:
     lines = f.readlines()
 
 nb_stairs_created = 0
@@ -6,7 +6,7 @@ nb_ceilings_created = 0
 nb_windows_created = 0
 nb_floors_created = 0
 nb_doors_created = 0
-
+nb_walls_created = 0
 
 for line in lines:
     stripped_line = line.strip()
@@ -24,9 +24,12 @@ for line in lines:
             nb_floors_created += 1
         elif "ID_OBJECTS_DOOR" in splitted_line[2]:
             nb_doors_created += 1
+        elif "ID_OBJECTS_WALL" in splitted_line[2]:
+            nb_walls_created += 1
 
 print("nb_stairs_created: ", nb_stairs_created)
 print("nb_ceilings_created: ", nb_ceilings_created)
 print("nb_windows_created: ", nb_windows_created)
 print("nb_floors_created: ", nb_floors_created)
 print("nb_doors_created: ", nb_doors_created)
+print("nb_walls_created: ", nb_walls_created)
